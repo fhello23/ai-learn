@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm Detail — AI Learn</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="algo-detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+
+    <!-- Top bar -->
+    <nav class="detail-nav">
+        <div class="detail-nav__container">
+            <a href="index.html" class="detail-nav__back">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                Back to AI Learn
+            </a>
+            <a href="index.html" class="nav__logo">
+                <span class="nav__logo-icon">
+                    <svg width="22" height="22" viewBox="0 0 28 28" fill="none">
+                        <path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="14" cy="14" r="4" fill="currentColor"/>
+                    </svg>
+                </span>
+                <span>AI Learn</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main content (populated by JS) -->
+    <main class="detail" id="detail">
+        <div class="detail__container">
+            <!-- Header -->
+            <header class="detail__header">
+                <div class="detail__badge" id="detailBadge"></div>
+                <h1 class="detail__title" id="detailTitle"></h1>
+                <p class="detail__subtitle" id="detailSubtitle"></p>
+            </header>
+
+            <div class="detail__grid">
+                <!-- Left column -->
+                <div class="detail__main">
+                    <!-- How it works -->
+                    <section class="detail__section">
+                        <h2 class="detail__section-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                            How It Works
+                        </h2>
+                        <div class="detail__steps" id="detailSteps"></div>
+                    </section>
+
+                    <!-- Real-world example -->
+                    <section class="detail__section">
+                        <h2 class="detail__section-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                            Real-World Example
+                        </h2>
+                        <div class="detail__example" id="detailExample"></div>
+                    </section>
+
+                    <!-- Code -->
+                    <section class="detail__section">
+                        <h2 class="detail__section-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                            Python Code
+                        </h2>
+                        <div class="detail__code-wrap">
+                            <button class="detail__copy" id="copyBtn" title="Copy code">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                                <span>Copy</span>
+                            </button>
+                            <pre class="detail__code"><code id="detailCode"></code></pre>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Right sidebar -->
+                <aside class="detail__sidebar">
+                    <!-- Formula -->
+                    <div class="detail__card">
+                        <h3 class="detail__card-title">Key Formula</h3>
+                        <pre class="detail__formula" id="detailFormula"></pre>
+                        <p class="detail__formula-note" id="detailFormulaNote"></p>
+                    </div>
+
+                    <!-- Strengths & Limitations -->
+                    <div class="detail__card detail__card--pros">
+                        <h3 class="detail__card-title detail__card-title--green">Strengths</h3>
+                        <ul class="detail__list detail__list--pros" id="detailPros"></ul>
+                    </div>
+
+                    <div class="detail__card detail__card--cons">
+                        <h3 class="detail__card-title detail__card-title--orange">Limitations</h3>
+                        <ul class="detail__list detail__list--cons" id="detailCons"></ul>
+                    </div>
+
+                    <!-- Complexity -->
+                    <div class="detail__card">
+                        <h3 class="detail__card-title">Complexity</h3>
+                        <div class="detail__complexity" id="detailComplexity"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- 404 state -->
+    <div class="detail-404" id="detail404" style="display:none;">
+        <h1>Algorithm not found</h1>
+        <p>The algorithm you're looking for doesn't exist yet.</p>
+        <a href="index.html" class="btn btn--primary">Back to Home</a>
+    </div>
+
+    <script src="algo-data.js"></script>
+    <script>
+    (function() {
+        const id = new URLSearchParams(window.location.search).get('id');
+        const algo = ALGO_DATA[id];
+
+        if (!algo) {
+            document.getElementById('detail').style.display = 'none';
+            document.getElementById('detail404').style.display = 'flex';
+            return;
+        }
+
+        // Title
+        document.title = `${algo.name} — AI Learn`;
+        document.getElementById('detailTitle').textContent = algo.name;
+        document.getElementById('detailSubtitle').textContent = algo.subtitle;
+
+        // Badge
+        const badge = document.getElementById('detailBadge');
+        badge.textContent = algo.category;
+        badge.className = `detail__badge detail__badge--${algo.badge}`;
+
+        // Steps
+        const stepsEl = document.getElementById('detailSteps');
+        algo.steps.forEach((step, i) => {
+            const div = document.createElement('div');
+            div.className = 'detail__step';
+            div.innerHTML = `<span class="detail__step-num">${i + 1}</span><p>${step}</p>`;
+            stepsEl.appendChild(div);
+        });
+
+        // Example
+        const exEl = document.getElementById('detailExample');
+        exEl.innerHTML = `<h4>${algo.example.title}</h4><p>${algo.example.desc}</p>`;
+
+        // Code
+        document.getElementById('detailCode').textContent = algo.code;
+
+        // Formula
+        document.getElementById('detailFormula').textContent = algo.formula;
+        document.getElementById('detailFormulaNote').textContent = algo.formulaNote;
+
+        // Pros
+        const prosEl = document.getElementById('detailPros');
+        algo.pros.forEach(p => {
+            const li = document.createElement('li');
+            li.textContent = p;
+            prosEl.appendChild(li);
+        });
+
+        // Cons
+        const consEl = document.getElementById('detailCons');
+        algo.cons.forEach(c => {
+            const li = document.createElement('li');
+            li.textContent = c;
+            consEl.appendChild(li);
+        });
+
+        // Complexity
+        const compEl = document.getElementById('detailComplexity');
+        Object.entries(algo.complexity).forEach(([key, val]) => {
+            const div = document.createElement('div');
+            div.className = 'detail__complexity-item';
+            div.innerHTML = `<span class="detail__complexity-label">${key}</span><span class="detail__complexity-value">${val}</span>`;
+            compEl.appendChild(div);
+        });
+
+        // Copy button
+        document.getElementById('copyBtn').addEventListener('click', function() {
+            navigator.clipboard.writeText(algo.code).then(() => {
+                this.querySelector('span').textContent = 'Copied!';
+                setTimeout(() => this.querySelector('span').textContent = 'Copy', 2000);
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

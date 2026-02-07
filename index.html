@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learn — Your Path to Artificial Intelligence</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated background -->
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--3" aria-hidden="true"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav__container">
+            <a href="#" class="nav__logo">
+                <span class="nav__logo-icon">
+                    <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                        <path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <circle cx="14" cy="14" r="4" fill="currentColor"/>
+                        <path d="M14 2v8M14 18v8M2 8l8 4M18 16l8 4M26 8l-8 4M10 16l-8 4" stroke="currentColor" stroke-width="1.5" opacity="0.5"/>
+                    </svg>
+                </span>
+                <span>AI Learn</span>
+            </a>
+            <div class="nav__links" id="navLinks">
+                <a href="#fundamentals" class="nav__link">Fundamentals</a>
+                <a href="#machine-learning" class="nav__link">Machine Learning</a>
+                <a href="#deep-learning" class="nav__link">Deep Learning</a>
+                <a href="#algorithms" class="nav__link">Algorithms</a>
+                <a href="#use-cases" class="nav__link">Use Cases</a>
+                <a href="#roadmap" class="nav__link">Roadmap</a>
+            </div>
+            <button class="nav__toggle" id="navToggle" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="hero">
+        <div class="hero__container">
+            <div class="hero__badge" data-animate="fade-up">
+                <span class="hero__badge-dot"></span>
+                The future is intelligent
+            </div>
+            <h1 class="hero__title" data-animate="fade-up" data-delay="100">
+                Master the Art of<br>
+                <span class="hero__title-gradient">Artificial Intelligence</span>
+            </h1>
+            <p class="hero__subtitle" data-animate="fade-up" data-delay="200">
+                From foundational concepts to cutting-edge deep learning.
+                Explore machine learning algorithms, neural networks, and real-world
+                applications that are reshaping every industry.
+            </p>
+            <div class="hero__actions" data-animate="fade-up" data-delay="300">
+                <a href="#fundamentals" class="btn btn--primary">
+                    Start Learning
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+                <a href="#roadmap" class="btn btn--ghost">View Roadmap</a>
+            </div>
+            <div class="hero__stats" data-animate="fade-up" data-delay="400">
+                <div class="hero__stat">
+                    <span class="hero__stat-number" data-count="6">0</span>
+                    <span class="hero__stat-label">Core Topics</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number" data-count="25">0</span><span>+</span>
+                    <span class="hero__stat-label">Algorithms</span>
+                </div>
+                <div class="hero__stat">
+                    <span class="hero__stat-number" data-count="16">0</span>
+                    <span class="hero__stat-label">Algorithms Explained</span>
+                </div>
+            </div>
+        </div>
+        <!-- Floating neural network visualization -->
+        <canvas id="neuralCanvas" class="hero__canvas" aria-hidden="true"></canvas>
+    </header>
+
+    <!-- Fundamentals Section -->
+    <section class="section" id="fundamentals">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">Chapter 01</span>
+                <h2 class="section__title">AI Fundamentals</h2>
+                <p class="section__desc">Understanding the building blocks of artificial intelligence — from its history to the core concepts that power modern systems.</p>
+            </div>
+
+            <div class="timeline" data-animate="fade-up" data-delay="100">
+                <div class="timeline__item">
+                    <div class="timeline__marker">1950</div>
+                    <div class="timeline__content">
+                        <h3>The Turing Test</h3>
+                        <p>Alan Turing proposes the question "Can machines think?" and introduces the Turing Test as a measure of machine intelligence.</p>
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__marker">1956</div>
+                    <div class="timeline__content">
+                        <h3>Birth of AI</h3>
+                        <p>The Dartmouth Conference coins "Artificial Intelligence" as a field. McCarthy, Minsky, Rochester, and Shannon lay the groundwork.</p>
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__marker">1997</div>
+                    <div class="timeline__content">
+                        <h3>Deep Blue</h3>
+                        <p>IBM's Deep Blue defeats world chess champion Garry Kasparov, demonstrating the power of search algorithms and specialized hardware.</p>
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__marker">2012</div>
+                    <div class="timeline__content">
+                        <h3>Deep Learning Revolution</h3>
+                        <p>AlexNet wins ImageNet competition, marking the beginning of the deep learning era powered by GPUs and large datasets.</p>
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__marker">2017</div>
+                    <div class="timeline__content">
+                        <h3>Transformers</h3>
+                        <p>"Attention Is All You Need" introduces the Transformer architecture, revolutionizing NLP and eventually all of AI.</p>
+                    </div>
+                </div>
+                <div class="timeline__item">
+                    <div class="timeline__marker">Now</div>
+                    <div class="timeline__content">
+                        <h3>The Age of Foundation Models</h3>
+                        <p>Large language models, multimodal AI, and generative systems are transforming every industry and how we interact with technology.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cards cards--3" data-animate="fade-up" data-delay="200">
+                <div class="card card--glass">
+                    <div class="card__icon card__icon--blue">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">What is AI?</h3>
+                    <p class="card__text">Artificial Intelligence is the simulation of human intelligence by machines. It encompasses learning, reasoning, problem-solving, perception, and language understanding. AI systems can be narrow (specialized) or general (human-level across tasks).</p>
+                    <div class="card__tags">
+                        <span class="tag">Narrow AI</span>
+                        <span class="tag">General AI</span>
+                        <span class="tag">Superintelligence</span>
+                    </div>
+                </div>
+                <div class="card card--glass">
+                    <div class="card__icon card__icon--purple">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">Key Concepts</h3>
+                    <p class="card__text">Core AI concepts include: <strong>Agents</strong> that perceive and act, <strong>State spaces</strong> for problem representation, <strong>Heuristics</strong> for efficient search, <strong>Knowledge representation</strong>, and <strong>Probabilistic reasoning</strong> under uncertainty.</p>
+                    <div class="card__tags">
+                        <span class="tag">Agents</span>
+                        <span class="tag">Search</span>
+                        <span class="tag">Reasoning</span>
+                    </div>
+                </div>
+                <div class="card card--glass">
+                    <div class="card__icon card__icon--green">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
+                        </svg>
+                    </div>
+                    <h3 class="card__title">AI vs ML vs DL</h3>
+                    <p class="card__text"><strong>AI</strong> is the broadest concept — machines mimicking intelligence. <strong>Machine Learning</strong> is a subset where machines learn from data. <strong>Deep Learning</strong> is a subset of ML using multi-layered neural networks for complex pattern recognition.</p>
+                    <div class="card__tags">
+                        <span class="tag">Hierarchy</span>
+                        <span class="tag">Subsets</span>
+                        <span class="tag">Distinctions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Machine Learning Section -->
+    <section class="section section--dark" id="machine-learning">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">Chapter 02</span>
+                <h2 class="section__title">Machine Learning</h2>
+                <p class="section__desc">The science of getting computers to learn and act without being explicitly programmed. Explore the three paradigms of machine learning.</p>
+            </div>
+
+            <!-- ML Paradigms Tabs -->
+            <div class="tabs" data-animate="fade-up" data-delay="100">
+                <div class="tabs__nav">
+                    <button class="tabs__btn tabs__btn--active" data-tab="supervised">Supervised</button>
+                    <button class="tabs__btn" data-tab="unsupervised">Unsupervised</button>
+                    <button class="tabs__btn" data-tab="reinforcement">Reinforcement</button>
+                </div>
+                <div class="tabs__content">
+                    <div class="tabs__panel tabs__panel--active" id="tab-supervised">
+                        <div class="tabs__grid">
+                            <div class="tabs__info">
+                                <h3>Supervised Learning</h3>
+                                <p>Learning from labeled examples. The algorithm learns a mapping from inputs to outputs by studying input-output pairs. Think of it as learning with an answer key.</p>
+                                <div class="tabs__formula">
+                                    <code>f(x) &rarr; y</code>
+                                    <span>Learn mapping from input x to label y</span>
+                                </div>
+                                <ul class="tabs__list">
+                                    <li><strong>Classification</strong> — Predict discrete categories (spam/not spam, cat/dog)</li>
+                                    <li><strong>Regression</strong> — Predict continuous values (price, temperature)</li>
+                                </ul>
+                            </div>
+                            <div class="tabs__algos">
+                                <h4>Key Algorithms</h4>
+                                <div class="algo-cards">
+                                    <div class="algo-card" data-algo="linear-regression" role="button" tabindex="0">
+                                        <span class="algo-card__name">Linear Regression</span>
+                                        <span class="algo-card__type">Regression</span>
+                                        <p>Fits a line to data to predict continuous outputs. Foundation of predictive modeling.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="logistic-regression" role="button" tabindex="0">
+                                        <span class="algo-card__name">Logistic Regression</span>
+                                        <span class="algo-card__type">Classification</span>
+                                        <p>Despite its name, used for classification. Uses sigmoid function to output probabilities.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="decision-trees" role="button" tabindex="0">
+                                        <span class="algo-card__name">Decision Trees</span>
+                                        <span class="algo-card__type">Both</span>
+                                        <p>Tree-like model of decisions. Splits data based on feature values. Highly interpretable.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="random-forest" role="button" tabindex="0">
+                                        <span class="algo-card__name">Random Forest</span>
+                                        <span class="algo-card__type">Ensemble</span>
+                                        <p>Ensemble of decision trees. Reduces overfitting through bagging and feature randomization.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="svm" role="button" tabindex="0">
+                                        <span class="algo-card__name">SVM</span>
+                                        <span class="algo-card__type">Classification</span>
+                                        <p>Finds the optimal hyperplane that maximally separates classes. Effective in high dimensions.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="knn" role="button" tabindex="0">
+                                        <span class="algo-card__name">KNN</span>
+                                        <span class="algo-card__type">Both</span>
+                                        <p>Classifies based on the majority vote of k nearest neighbors. Simple yet powerful.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__panel" id="tab-unsupervised">
+                        <div class="tabs__grid">
+                            <div class="tabs__info">
+                                <h3>Unsupervised Learning</h3>
+                                <p>Discovering hidden patterns in data without labeled examples. The algorithm finds structure on its own — like organizing a library without a cataloguing system.</p>
+                                <div class="tabs__formula">
+                                    <code>f(x) &rarr; structure</code>
+                                    <span>Discover patterns in unlabeled data x</span>
+                                </div>
+                                <ul class="tabs__list">
+                                    <li><strong>Clustering</strong> — Group similar data points (customer segments, image grouping)</li>
+                                    <li><strong>Dimensionality Reduction</strong> — Compress features while preserving information</li>
+                                    <li><strong>Association</strong> — Discover rules between variables (market basket analysis)</li>
+                                </ul>
+                            </div>
+                            <div class="tabs__algos">
+                                <h4>Key Algorithms</h4>
+                                <div class="algo-cards">
+                                    <div class="algo-card" data-algo="k-means" role="button" tabindex="0">
+                                        <span class="algo-card__name">K-Means</span>
+                                        <span class="algo-card__type">Clustering</span>
+                                        <p>Partitions data into K clusters by minimizing within-cluster variance. Fast and scalable.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="dbscan" role="button" tabindex="0">
+                                        <span class="algo-card__name">DBSCAN</span>
+                                        <span class="algo-card__type">Clustering</span>
+                                        <p>Density-based clustering that finds arbitrarily shaped clusters and identifies noise points.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="pca" role="button" tabindex="0">
+                                        <span class="algo-card__name">PCA</span>
+                                        <span class="algo-card__type">Reduction</span>
+                                        <p>Principal Component Analysis finds directions of maximum variance to reduce dimensions.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="t-sne" role="button" tabindex="0">
+                                        <span class="algo-card__name">t-SNE</span>
+                                        <span class="algo-card__type">Visualization</span>
+                                        <p>Reduces high-dimensional data to 2D/3D for visualization while preserving local structure.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="autoencoders" role="button" tabindex="0">
+                                        <span class="algo-card__name">Autoencoders</span>
+                                        <span class="algo-card__type">Reduction</span>
+                                        <p>Neural networks that learn compressed representations by encoding and decoding data.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="apriori" role="button" tabindex="0">
+                                        <span class="algo-card__name">Apriori</span>
+                                        <span class="algo-card__type">Association</span>
+                                        <p>Discovers frequent itemsets and association rules in transactional databases.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tabs__panel" id="tab-reinforcement">
+                        <div class="tabs__grid">
+                            <div class="tabs__info">
+                                <h3>Reinforcement Learning</h3>
+                                <p>Learning through trial and error by interacting with an environment. An agent takes actions and receives rewards or penalties — like training a dog with treats.</p>
+                                <div class="tabs__formula">
+                                    <code>s, a &rarr; r, s'</code>
+                                    <span>State + Action yields Reward + Next State</span>
+                                </div>
+                                <ul class="tabs__list">
+                                    <li><strong>Agent</strong> — The learner/decision-maker</li>
+                                    <li><strong>Environment</strong> — What the agent interacts with</li>
+                                    <li><strong>Policy</strong> — Strategy mapping states to actions</li>
+                                    <li><strong>Reward Signal</strong> — Feedback from the environment</li>
+                                </ul>
+                            </div>
+                            <div class="tabs__algos">
+                                <h4>Key Algorithms</h4>
+                                <div class="algo-cards">
+                                    <div class="algo-card" data-algo="q-learning" role="button" tabindex="0">
+                                        <span class="algo-card__name">Q-Learning</span>
+                                        <span class="algo-card__type">Value-Based</span>
+                                        <p>Learns action values (Q-values) to find the optimal policy without a model of the environment.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="dqn" role="button" tabindex="0">
+                                        <span class="algo-card__name">Deep Q-Network</span>
+                                        <span class="algo-card__type">Value-Based</span>
+                                        <p>Combines Q-learning with deep neural networks. Famously mastered Atari games from raw pixels.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="policy-gradient" role="button" tabindex="0">
+                                        <span class="algo-card__name">Policy Gradient</span>
+                                        <span class="algo-card__type">Policy-Based</span>
+                                        <p>Directly optimizes the policy by following the gradient of expected reward.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="ppo" role="button" tabindex="0">
+                                        <span class="algo-card__name">PPO</span>
+                                        <span class="algo-card__type">Policy-Based</span>
+                                        <p>Proximal Policy Optimization. Stable, reliable training used in robotics and RLHF for LLMs.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="actor-critic" role="button" tabindex="0">
+                                        <span class="algo-card__name">Actor-Critic</span>
+                                        <span class="algo-card__type">Hybrid</span>
+                                        <p>Combines value estimation (critic) with policy optimization (actor) for stable learning.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                    <div class="algo-card" data-algo="alphago" role="button" tabindex="0">
+                                        <span class="algo-card__name">AlphaGo/Zero</span>
+                                        <span class="algo-card__type">MCTS + RL</span>
+                                        <p>Combined tree search with deep RL to master Go. AlphaZero learned from self-play alone.</p>
+                                        <span class="algo-card__arrow">&rarr;</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ML Concepts -->
+            <div class="concepts" data-animate="fade-up" data-delay="200">
+                <h3 class="concepts__title">Essential ML Concepts</h3>
+                <div class="concepts__grid">
+                    <div class="concept">
+                        <div class="concept__header">
+                            <span class="concept__icon">&#9881;</span>
+                            <h4>Training & Testing</h4>
+                        </div>
+                        <p>Split data into training (learn patterns), validation (tune hyperparameters), and test (evaluate performance) sets. Typical split: 70/15/15.</p>
+                    </div>
+                    <div class="concept">
+                        <div class="concept__header">
+                            <span class="concept__icon">&#9878;</span>
+                            <h4>Bias-Variance Tradeoff</h4>
+                        </div>
+                        <p><strong>Bias</strong>: error from oversimplifying (underfitting). <strong>Variance</strong>: error from over-complexity (overfitting). The goal is the sweet spot between both.</p>
+                    </div>
+                    <div class="concept">
+                        <div class="concept__header">
+                            <span class="concept__icon">&#9889;</span>
+                            <h4>Gradient Descent</h4>
+                        </div>
+                        <p>Optimization algorithm that iteratively adjusts parameters to minimize a loss function. Variants: SGD, Adam, RMSProp. The backbone of model training.</p>
+                    </div>
+                    <div class="concept">
+                        <div class="concept__header">
+                            <span class="concept__icon">&#9875;</span>
+                            <h4>Cross-Validation</h4>
+                        </div>
+                        <p>K-fold cross-validation trains K models on different data splits to get a robust performance estimate. Reduces the chance of lucky/unlucky splits.</p>
+                    </div>
+                    <div class="concept">
+                        <div class="concept__header">
+                            <span class="concept__icon">&#128200;</span>
+                            <h4>Feature Engineering</h4>
+                        </div>
+                        <p>The art of creating informative features from raw data. Often matters more than algorithm choice. Includes normalization, encoding, and selection.</p>
+                    </div>
+                    <div class="concept">
+                        <div class="concept__header">
+                            <span class="concept__icon">&#128736;</span>
+                            <h4>Regularization</h4>
+                        </div>
+                        <p>Techniques to prevent overfitting: L1 (Lasso) promotes sparsity, L2 (Ridge) penalizes large weights, Dropout randomly deactivates neurons during training.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deep Learning Section -->
+    <section class="section" id="deep-learning">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">Chapter 03</span>
+                <h2 class="section__title">Deep Learning</h2>
+                <p class="section__desc">Neural networks with multiple layers that learn hierarchical representations. The driving force behind modern AI breakthroughs.</p>
+            </div>
+
+            <!-- Neural Network Interactive -->
+            <div class="nn-visual" data-animate="fade-up" data-delay="100">
+                <div class="nn-visual__header">
+                    <h3>How Neural Networks Work</h3>
+                    <p>Data flows through layers of interconnected neurons. Each connection has a weight that's adjusted during training.</p>
+                </div>
+                <div class="nn-visual__diagram">
+                    <div class="nn-layer" data-layer="input">
+                        <span class="nn-layer__label">Input Layer</span>
+                        <div class="nn-neurons">
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                        </div>
+                    </div>
+                    <div class="nn-connections" aria-hidden="true"></div>
+                    <div class="nn-layer" data-layer="hidden1">
+                        <span class="nn-layer__label">Hidden Layer 1</span>
+                        <div class="nn-neurons">
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                        </div>
+                    </div>
+                    <div class="nn-connections" aria-hidden="true"></div>
+                    <div class="nn-layer" data-layer="hidden2">
+                        <span class="nn-layer__label">Hidden Layer 2</span>
+                        <div class="nn-neurons">
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                        </div>
+                    </div>
+                    <div class="nn-connections" aria-hidden="true"></div>
+                    <div class="nn-layer" data-layer="output">
+                        <span class="nn-layer__label">Output Layer</span>
+                        <div class="nn-neurons">
+                            <div class="nn-neuron"></div>
+                            <div class="nn-neuron"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nn-visual__steps">
+                    <div class="nn-step">
+                        <span class="nn-step__num">1</span>
+                        <div>
+                            <strong>Forward Pass</strong>
+                            <p>Input data is multiplied by weights, summed, and passed through activation functions at each layer.</p>
+                        </div>
+                    </div>
+                    <div class="nn-step">
+                        <span class="nn-step__num">2</span>
+                        <div>
+                            <strong>Loss Calculation</strong>
+                            <p>Compare the network's output to the expected result using a loss function (MSE, Cross-Entropy).</p>
+                        </div>
+                    </div>
+                    <div class="nn-step">
+                        <span class="nn-step__num">3</span>
+                        <div>
+                            <strong>Backpropagation</strong>
+                            <p>Calculate gradients of the loss with respect to each weight using the chain rule, flowing backwards.</p>
+                        </div>
+                    </div>
+                    <div class="nn-step">
+                        <span class="nn-step__num">4</span>
+                        <div>
+                            <strong>Weight Update</strong>
+                            <p>Adjust weights using gradient descent: w = w - lr * gradient. Repeat for thousands of iterations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Architecture Cards -->
+            <div class="arch-grid" data-animate="fade-up" data-delay="200">
+                <div class="arch-card" data-algo="cnn" role="button" tabindex="0">
+                    <div class="arch-card__header arch-card__header--cnn">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/><rect x="8" y="14" width="8" height="8" rx="1"/>
+                            <path d="M6 10v4M18 10v4M10 10v4M14 10v4" opacity="0.5"/>
+                        </svg>
+                        <h3>CNN</h3>
+                        <span>Convolutional Neural Networks</span>
+                    </div>
+                    <div class="arch-card__body">
+                        <p>Specialized for grid-like data (images, video). Uses convolutional filters that slide across input to detect local patterns like edges, textures, and shapes.</p>
+                        <div class="arch-card__layers">
+                            <div class="arch-layer">Conv Layer <small>Feature detection</small></div>
+                            <div class="arch-layer">Pooling <small>Downsampling</small></div>
+                            <div class="arch-layer">Conv Layer <small>Higher features</small></div>
+                            <div class="arch-layer">Fully Connected <small>Classification</small></div>
+                        </div>
+                        <div class="arch-card__uses">
+                            <span>Image Classification</span>
+                            <span>Object Detection</span>
+                            <span>Medical Imaging</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-card" data-algo="rnn-lstm" role="button" tabindex="0">
+                    <div class="arch-card__header arch-card__header--rnn">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="6" cy="12" r="3"/><circle cx="18" cy="12" r="3"/>
+                            <path d="M9 12h6"/><path d="M18 9c0-3-3-5-6-5S6 6 6 9" opacity="0.5"/>
+                        </svg>
+                        <h3>RNN / LSTM</h3>
+                        <span>Recurrent Neural Networks</span>
+                    </div>
+                    <div class="arch-card__body">
+                        <p>Designed for sequential data. RNNs maintain a hidden state that captures information from previous time steps. LSTMs add gates to control information flow and handle long dependencies.</p>
+                        <div class="arch-card__layers">
+                            <div class="arch-layer">Input Gate <small>What to store</small></div>
+                            <div class="arch-layer">Forget Gate <small>What to discard</small></div>
+                            <div class="arch-layer">Cell State <small>Long-term memory</small></div>
+                            <div class="arch-layer">Output Gate <small>What to output</small></div>
+                        </div>
+                        <div class="arch-card__uses">
+                            <span>Time Series</span>
+                            <span>Speech Recognition</span>
+                            <span>Music Generation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-card" data-algo="transformer" role="button" tabindex="0">
+                    <div class="arch-card__header arch-card__header--transformer">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="18" r="3"/>
+                            <path d="M12 9v3M9 15l-1.5 1.5M15 15l1.5 1.5"/><path d="M6 15l6-6 6 6" opacity="0.3"/>
+                        </svg>
+                        <h3>Transformer</h3>
+                        <span>Attention-Based Architecture</span>
+                    </div>
+                    <div class="arch-card__body">
+                        <p>The dominant architecture in modern AI. Uses self-attention to weigh the importance of different parts of the input. Processes entire sequences in parallel, unlike RNNs.</p>
+                        <div class="arch-card__layers">
+                            <div class="arch-layer">Embedding <small>Token representation</small></div>
+                            <div class="arch-layer">Self-Attention <small>Context modeling</small></div>
+                            <div class="arch-layer">Feed-Forward <small>Transformation</small></div>
+                            <div class="arch-layer">Layer Norm <small>Stabilization</small></div>
+                        </div>
+                        <div class="arch-card__uses">
+                            <span>LLMs (GPT, Claude)</span>
+                            <span>Translation</span>
+                            <span>Vision (ViT)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="arch-card" data-algo="gan" role="button" tabindex="0">
+                    <div class="arch-card__header arch-card__header--gan">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <rect x="2" y="4" width="8" height="16" rx="2"/><rect x="14" y="4" width="8" height="16" rx="2"/>
+                            <path d="M10 10h4M10 14h4" stroke-dasharray="2 2"/>
+                        </svg>
+                        <h3>GAN</h3>
+                        <span>Generative Adversarial Networks</span>
+                    </div>
+                    <div class="arch-card__body">
+                        <p>Two networks compete: a Generator creates fake data, and a Discriminator tries to distinguish real from fake. This adversarial process produces remarkably realistic outputs.</p>
+                        <div class="arch-card__layers">
+                            <div class="arch-layer">Noise Input <small>Random vector z</small></div>
+                            <div class="arch-layer">Generator <small>Creates samples</small></div>
+                            <div class="arch-layer">Discriminator <small>Real vs fake</small></div>
+                            <div class="arch-layer">Adversarial Loss <small>Min-max game</small></div>
+                        </div>
+                        <div class="arch-card__uses">
+                            <span>Image Generation</span>
+                            <span>Style Transfer</span>
+                            <span>Data Augmentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Traditional Algorithms Section -->
+    <section class="section section--dark" id="algorithms">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">Chapter 04</span>
+                <h2 class="section__title">Traditional AI Algorithms</h2>
+                <p class="section__desc">Classical algorithms that form the foundation of AI. Many modern systems still rely on these elegant approaches.</p>
+            </div>
+
+            <div class="algo-categories" data-animate="fade-up" data-delay="100">
+                <!-- Search Algorithms -->
+                <div class="algo-category">
+                    <div class="algo-category__header">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                            Search Algorithms
+                        </h3>
+                        <p>Finding solutions by exploring a state space</p>
+                    </div>
+                    <div class="algo-list">
+                        <div class="algo-item" data-algo="bfs" data-complexity="O(b^d)" role="button" tabindex="0">
+                            <h4>BFS <small>(Breadth-First Search)</small></h4>
+                            <p>Explores all nodes at the current depth before moving deeper. Guarantees shortest path in unweighted graphs. Uses a queue.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--complete">Complete</span>
+                                <span class="algo-prop algo-prop--optimal">Optimal</span>
+                            </div>
+                        </div>
+                        <div class="algo-item" data-algo="dfs" data-complexity="O(b^m)" role="button" tabindex="0">
+                            <h4>DFS <small>(Depth-First Search)</small></h4>
+                            <p>Explores as deep as possible before backtracking. Memory efficient but may not find the shortest path. Uses a stack.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--complete">Complete*</span>
+                                <span class="algo-prop algo-prop--not">Not Optimal</span>
+                            </div>
+                        </div>
+                        <div class="algo-item" data-algo="a-star" data-complexity="O(b^(C*/&epsilon;))" role="button" tabindex="0">
+                            <h4>A* Search</h4>
+                            <p>Uses f(n) = g(n) + h(n) — actual cost plus heuristic estimate. Optimal when heuristic is admissible (never overestimates). The gold standard.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--complete">Complete</span>
+                                <span class="algo-prop algo-prop--optimal">Optimal*</span>
+                            </div>
+                        </div>
+                        <div class="algo-item" data-algo="greedy-best-first" data-complexity="O(b^d)" role="button" tabindex="0">
+                            <h4>Greedy Best-First</h4>
+                            <p>Expands the node that appears closest to the goal using only the heuristic h(n). Fast but can be misled by the heuristic.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--not">Incomplete</span>
+                                <span class="algo-prop algo-prop--not">Not Optimal</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Optimization -->
+                <div class="algo-category">
+                    <div class="algo-category__header">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+                            Optimization Algorithms
+                        </h3>
+                        <p>Finding the best solution from all feasible solutions</p>
+                    </div>
+                    <div class="algo-list">
+                        <div class="algo-item" data-algo="genetic" role="button" tabindex="0">
+                            <h4>Genetic Algorithms</h4>
+                            <p>Inspired by evolution. Maintains a population of solutions that evolve through selection, crossover, and mutation over generations.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--meta">Metaheuristic</span>
+                                <span class="algo-prop">Population-based</span>
+                            </div>
+                        </div>
+                        <div class="algo-item" data-algo="simulated-annealing" role="button" tabindex="0">
+                            <h4>Simulated Annealing</h4>
+                            <p>Inspired by metallurgy. Accepts worse solutions with decreasing probability over time, allowing escape from local optima.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--meta">Metaheuristic</span>
+                                <span class="algo-prop">Single-solution</span>
+                            </div>
+                        </div>
+                        <div class="algo-item" data-algo="hill-climbing" role="button" tabindex="0">
+                            <h4>Hill Climbing</h4>
+                            <p>Iteratively improves the solution by moving to the best neighboring state. Simple but prone to getting stuck in local optima.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop">Local Search</span>
+                                <span class="algo-prop algo-prop--not">Local Optima</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Probabilistic -->
+                <div class="algo-category">
+                    <div class="algo-category__header">
+                        <h3>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                            Probabilistic Methods
+                        </h3>
+                        <p>Reasoning under uncertainty using probability theory</p>
+                    </div>
+                    <div class="algo-list">
+                        <div class="algo-item" data-algo="bayesian-networks" role="button" tabindex="0">
+                            <h4>Bayesian Networks</h4>
+                            <p>Directed acyclic graphs representing probabilistic relationships. Enable efficient inference about uncertain events using Bayes' theorem.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--complete">Principled</span>
+                                <span class="algo-prop">Graphical Model</span>
+                            </div>
+                        </div>
+                        <div class="algo-item" data-algo="hmm" role="button" tabindex="0">
+                            <h4>Hidden Markov Models</h4>
+                            <p>Model sequences with hidden states. Used in speech recognition, bioinformatics, and temporal pattern recognition. Viterbi algorithm finds most likely sequence.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop">Sequential</span>
+                                <span class="algo-prop">Temporal</span>
+                            </div>
+                        </div>
+                        <div class="algo-item" data-algo="monte-carlo" role="button" tabindex="0">
+                            <h4>Monte Carlo Methods</h4>
+                            <p>Use random sampling to estimate complex quantities. MCMC (Markov Chain Monte Carlo) samples from complex probability distributions.</p>
+                            <div class="algo-item__props">
+                                <span class="algo-prop algo-prop--meta">Stochastic</span>
+                                <span class="algo-prop">Sampling</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- When to Use Each Algorithm Section -->
+    <section class="section" id="use-cases">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">Chapter 05</span>
+                <h2 class="section__title">When to Use Each Algorithm</h2>
+                <p class="section__desc">Choosing the right algorithm is half the battle. Here's a practical guide showing when each algorithm shines, with real-world examples.</p>
+            </div>
+
+            <!-- Algorithm filter tabs -->
+            <div class="algo-filter" data-animate="fade-up" data-delay="50">
+                <button class="algo-filter__btn algo-filter__btn--active" data-filter="all">All</button>
+                <button class="algo-filter__btn" data-filter="supervised">Supervised</button>
+                <button class="algo-filter__btn" data-filter="unsupervised">Unsupervised</button>
+                <button class="algo-filter__btn" data-filter="deep">Deep Learning</button>
+                <button class="algo-filter__btn" data-filter="reinforcement">Reinforcement</button>
+                <button class="algo-filter__btn" data-filter="classical">Classical AI</button>
+            </div>
+
+            <div class="when-grid" data-animate="fade-up" data-delay="100">
+
+                <!-- Linear Regression -->
+                <div class="when-card" data-category="supervised">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">Linear Regression</span>
+                            <span class="when-card__badge when-card__badge--supervised">Supervised</span>
+                        </div>
+                        <p class="when-card__when">When you need to predict a <strong>continuous number</strong> and the relationship between variables is roughly linear.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127968;</span>
+                            <div>
+                                <strong>House Price Prediction</strong>
+                                <p>Predict sale price from square footage, bedrooms, location. Each feature contributes additively to price.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128200;</span>
+                            <div>
+                                <strong>Sales Forecasting</strong>
+                                <p>Forecast next quarter revenue based on ad spend, seasonality, and historical trends.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#9879;</span>
+                            <div>
+                                <strong>Salary Estimation</strong>
+                                <p>Estimate expected salary from years of experience, education level, and job title.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Interpretable, fast, great baseline</div>
+                        <div class="when-con"><span>-</span> Fails on non-linear patterns</div>
+                    </div>
+                </div>
+
+                <!-- Logistic Regression -->
+                <div class="when-card" data-category="supervised">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">Logistic Regression</span>
+                            <span class="when-card__badge when-card__badge--supervised">Supervised</span>
+                        </div>
+                        <p class="when-card__when">When you need <strong>yes/no classification</strong> with probability outputs and the decision boundary is roughly linear.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128231;</span>
+                            <div>
+                                <strong>Spam Detection</strong>
+                                <p>Classify email as spam or not spam based on word frequencies, sender reputation, and link count.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128179;</span>
+                            <div>
+                                <strong>Credit Approval</strong>
+                                <p>Approve or deny a loan based on credit score, income, and debt-to-income ratio. Outputs probability of default.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129657;</span>
+                            <div>
+                                <strong>Disease Screening</strong>
+                                <p>Flag patients as at-risk/not-at-risk for diabetes based on blood sugar, BMI, age, and family history.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Gives probabilities, highly interpretable</div>
+                        <div class="when-con"><span>-</span> Can't capture complex non-linear boundaries</div>
+                    </div>
+                </div>
+
+                <!-- Decision Trees / Random Forest -->
+                <div class="when-card" data-category="supervised">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">Decision Tree / Random Forest</span>
+                            <span class="when-card__badge when-card__badge--supervised">Supervised</span>
+                        </div>
+                        <p class="when-card__when">When you need an <strong>interpretable model</strong> or have mixed data types (numbers + categories). Random Forest when you want higher accuracy.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128176;</span>
+                            <div>
+                                <strong>Fraud Detection</strong>
+                                <p>Flag fraudulent transactions using amount, location, time-of-day, merchant category. "If amount > $5k AND foreign AND nighttime &rarr; suspicious."</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129520;</span>
+                            <div>
+                                <strong>Medical Diagnosis</strong>
+                                <p>Diagnose conditions from symptoms: "If fever AND cough AND fatigue &rarr; likely flu." Doctors can understand and verify the logic.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128100;</span>
+                            <div>
+                                <strong>Customer Churn Prediction</strong>
+                                <p>Predict which users will cancel their subscription based on usage patterns, support tickets, and payment history.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Handles mixed data, no scaling needed, explainable</div>
+                        <div class="when-con"><span>-</span> Single trees overfit; forests lose interpretability</div>
+                    </div>
+                </div>
+
+                <!-- SVM -->
+                <div class="when-card" data-category="supervised">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">SVM (Support Vector Machine)</span>
+                            <span class="when-card__badge when-card__badge--supervised">Supervised</span>
+                        </div>
+                        <p class="when-card__when">When you have a <strong>small-to-medium dataset</strong> with clear class separation, especially in high-dimensional spaces.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128221;</span>
+                            <div>
+                                <strong>Text Classification</strong>
+                                <p>Categorize documents or reviews into topics. SVMs excel with high-dimensional sparse text features (bag-of-words).</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129516;</span>
+                            <div>
+                                <strong>Gene Expression Analysis</strong>
+                                <p>Classify cancer types from gene data — thousands of features but only hundreds of samples. SVM thrives here.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#9997;</span>
+                            <div>
+                                <strong>Handwriting Recognition</strong>
+                                <p>Classify handwritten digits or characters. Kernel trick maps pixel data into separable feature space.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Effective in high dimensions, robust with kernel trick</div>
+                        <div class="when-con"><span>-</span> Slow on large datasets, hard to interpret</div>
+                    </div>
+                </div>
+
+                <!-- KNN -->
+                <div class="when-card" data-category="supervised">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">KNN (K-Nearest Neighbors)</span>
+                            <span class="when-card__badge when-card__badge--supervised">Supervised</span>
+                        </div>
+                        <p class="when-card__when">When you have a <strong>small dataset</strong>, want a simple baseline, and believe similar inputs should have similar outputs.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127916;</span>
+                            <div>
+                                <strong>Recommendation Systems</strong>
+                                <p>"Users who liked similar movies also liked this." Find the K most similar users and recommend what they enjoyed.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128270;</span>
+                            <div>
+                                <strong>Anomaly Detection</strong>
+                                <p>Detect unusual patterns — if a data point's neighbors are all very far away, it's likely an outlier (fraud, defect).</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127757;</span>
+                            <div>
+                                <strong>Imputing Missing Data</strong>
+                                <p>Fill in missing values by averaging the values of the most similar complete records in the dataset.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Zero training time, intuitive, no assumptions</div>
+                        <div class="when-con"><span>-</span> Slow at prediction time, suffers in high dimensions</div>
+                    </div>
+                </div>
+
+                <!-- K-Means -->
+                <div class="when-card" data-category="unsupervised">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">K-Means Clustering</span>
+                            <span class="when-card__badge when-card__badge--unsupervised">Unsupervised</span>
+                        </div>
+                        <p class="when-card__when">When you need to <strong>group unlabeled data</strong> into a known number of clusters based on similarity.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128101;</span>
+                            <div>
+                                <strong>Customer Segmentation</strong>
+                                <p>Group customers into segments (budget, mid-tier, premium) by spending habits, frequency, and preferences for targeted marketing.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127912;</span>
+                            <div>
+                                <strong>Image Color Quantization</strong>
+                                <p>Reduce an image from millions of colors to K representative colors. Each pixel gets assigned to its nearest color centroid.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128205;</span>
+                            <div>
+                                <strong>Geographic Zoning</strong>
+                                <p>Cluster delivery addresses into zones for route optimization, or group cell towers for network planning.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Fast, scalable, easy to implement</div>
+                        <div class="when-con"><span>-</span> Must specify K, assumes spherical clusters</div>
+                    </div>
+                </div>
+
+                <!-- PCA -->
+                <div class="when-card" data-category="unsupervised">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">PCA (Principal Component Analysis)</span>
+                            <span class="when-card__badge when-card__badge--unsupervised">Unsupervised</span>
+                        </div>
+                        <p class="when-card__when">When you have <strong>too many features</strong> and need to reduce dimensionality while keeping the most important information.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128064;</span>
+                            <div>
+                                <strong>Face Recognition Preprocessing</strong>
+                                <p>Reduce a 10,000-pixel face image to 150 "eigenfaces" — the principal components that capture the most variance between faces.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128300;</span>
+                            <div>
+                                <strong>Genomic Data Analysis</strong>
+                                <p>Reduce 20,000+ gene expressions to a few principal components to visualize population clusters and genetic variation.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128202;</span>
+                            <div>
+                                <strong>Feature Denoising</strong>
+                                <p>Remove noise from sensor data by keeping only the top components and discarding low-variance (noisy) dimensions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Speeds up training, removes noise, enables visualization</div>
+                        <div class="when-con"><span>-</span> Linear only, components lose interpretability</div>
+                    </div>
+                </div>
+
+                <!-- CNN -->
+                <div class="when-card" data-category="deep">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">CNN (Convolutional Neural Network)</span>
+                            <span class="when-card__badge when-card__badge--deep">Deep Learning</span>
+                        </div>
+                        <p class="when-card__when">When your input is <strong>grid-like data</strong> — images, video, spectrograms — and spatial patterns matter.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128248;</span>
+                            <div>
+                                <strong>Image Classification</strong>
+                                <p>"Is this a cat or a dog?" CNNs learn hierarchical features: edges &rarr; textures &rarr; parts &rarr; objects automatically.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129658;</span>
+                            <div>
+                                <strong>Medical Imaging (X-rays, MRI)</strong>
+                                <p>Detect tumors, fractures, or retinal disease from scans. Often matches or exceeds radiologist accuracy.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128663;</span>
+                            <div>
+                                <strong>Self-Driving Cars (Perception)</strong>
+                                <p>Detect pedestrians, lane markings, traffic signs, and other vehicles from camera feeds in real-time.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> State-of-art for images, automatic feature extraction</div>
+                        <div class="when-con"><span>-</span> Needs lots of data and GPU compute</div>
+                    </div>
+                </div>
+
+                <!-- RNN / LSTM -->
+                <div class="when-card" data-category="deep">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">RNN / LSTM</span>
+                            <span class="when-card__badge when-card__badge--deep">Deep Learning</span>
+                        </div>
+                        <p class="when-card__when">When your data is <strong>sequential</strong> and the order matters — time series, text, audio, or any temporal pattern.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128200;</span>
+                            <div>
+                                <strong>Stock Price Forecasting</strong>
+                                <p>Predict future prices from historical sequences. LSTMs remember long-term trends while tracking short-term volatility.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127908;</span>
+                            <div>
+                                <strong>Speech Recognition</strong>
+                                <p>Convert spoken audio to text. Process audio frames sequentially, understanding context from what came before.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127925;</span>
+                            <div>
+                                <strong>Music Generation</strong>
+                                <p>Generate melodies note-by-note. The network learns musical structure — scales, chords, rhythm patterns — from training songs.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Handles variable-length sequences, captures temporal patterns</div>
+                        <div class="when-con"><span>-</span> Slow to train, largely replaced by Transformers for text</div>
+                    </div>
+                </div>
+
+                <!-- Transformer -->
+                <div class="when-card when-card--highlight" data-category="deep">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">Transformer</span>
+                            <span class="when-card__badge when-card__badge--deep">Deep Learning</span>
+                        </div>
+                        <p class="when-card__when">When you need to model <strong>long-range dependencies</strong> in text, code, images, or any sequence. The dominant architecture in modern AI.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128172;</span>
+                            <div>
+                                <strong>Chatbots & Assistants (GPT, Claude)</strong>
+                                <p>Generate human-like responses by attending to the full conversation context. Power behind ChatGPT, Claude, Gemini.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128187;</span>
+                            <div>
+                                <strong>Code Generation (Copilot)</strong>
+                                <p>Autocomplete code, generate functions from comments, translate between languages. Understands syntax + semantics.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127760;</span>
+                            <div>
+                                <strong>Machine Translation</strong>
+                                <p>Translate between languages with near-human quality. Self-attention captures grammar relationships across the whole sentence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Parallelizable, captures global context, state-of-art for NLP</div>
+                        <div class="when-con"><span>-</span> Extremely compute-intensive, needs massive data</div>
+                    </div>
+                </div>
+
+                <!-- GAN -->
+                <div class="when-card" data-category="deep">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">GAN (Generative Adversarial Network)</span>
+                            <span class="when-card__badge when-card__badge--deep">Deep Learning</span>
+                        </div>
+                        <p class="when-card__when">When you need to <strong>generate realistic synthetic data</strong> — images, audio, or augment training datasets.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128248;</span>
+                            <div>
+                                <strong>Photorealistic Image Generation</strong>
+                                <p>Generate faces, artwork, or product photos that don't exist. StyleGAN creates high-res faces indistinguishable from real ones.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127912;</span>
+                            <div>
+                                <strong>Style Transfer & Image Editing</strong>
+                                <p>Turn photos into paintings, swap seasons in landscapes, age/de-age faces, or convert sketches to realistic images.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128202;</span>
+                            <div>
+                                <strong>Training Data Augmentation</strong>
+                                <p>Generate synthetic medical images when real data is scarce. Create rare-case examples to balance imbalanced datasets.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Produces highly realistic outputs</div>
+                        <div class="when-con"><span>-</span> Hard to train (mode collapse), unstable</div>
+                    </div>
+                </div>
+
+                <!-- Q-Learning / DQN -->
+                <div class="when-card" data-category="reinforcement">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">Q-Learning / DQN</span>
+                            <span class="when-card__badge when-card__badge--rl">Reinforcement</span>
+                        </div>
+                        <p class="when-card__when">When an agent must learn to <strong>make sequential decisions</strong> through trial-and-error in an environment with rewards.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127918;</span>
+                            <div>
+                                <strong>Game Playing (Atari, Chess)</strong>
+                                <p>DQN mastered 49 Atari games from raw pixels. Learn which actions maximize score through millions of episodes.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129302;</span>
+                            <div>
+                                <strong>Robot Navigation</strong>
+                                <p>Learn to navigate a warehouse, avoiding obstacles and finding optimal paths. Reward for reaching destination, penalty for collisions.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128161;</span>
+                            <div>
+                                <strong>Energy Management</strong>
+                                <p>Optimize HVAC systems in buildings. Agent learns when to heat/cool to minimize energy cost while maintaining comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> No labeled data needed, handles sequential decisions</div>
+                        <div class="when-con"><span>-</span> Needs many episodes, reward shaping is tricky</div>
+                    </div>
+                </div>
+
+                <!-- PPO -->
+                <div class="when-card" data-category="reinforcement">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">PPO (Proximal Policy Optimization)</span>
+                            <span class="when-card__badge when-card__badge--rl">Reinforcement</span>
+                        </div>
+                        <p class="when-card__when">When you need <strong>stable, reliable RL training</strong> — especially for robotics, continuous control, or fine-tuning LLMs with RLHF.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129302;</span>
+                            <div>
+                                <strong>Robotic Arm Control</strong>
+                                <p>Train a robotic arm to grasp objects, assemble parts, or pour liquids. Continuous action space (joint angles/torques).</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128172;</span>
+                            <div>
+                                <strong>RLHF for LLMs</strong>
+                                <p>Fine-tune language models to be helpful, harmless, and honest. PPO optimizes the model based on human preference rewards.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128694;</span>
+                            <div>
+                                <strong>Locomotion (Walking/Running)</strong>
+                                <p>Teach simulated or physical robots to walk, run, and balance. PPO handles the complex continuous action spaces well.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Stable training, works for continuous actions, industry standard</div>
+                        <div class="when-con"><span>-</span> Sample inefficient, sensitive to hyperparameters</div>
+                    </div>
+                </div>
+
+                <!-- A* Search -->
+                <div class="when-card" data-category="classical">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">A* Search</span>
+                            <span class="when-card__badge when-card__badge--classical">Classical AI</span>
+                        </div>
+                        <p class="when-card__when">When you need to find the <strong>optimal path</strong> in a graph or grid and have a good heuristic estimate of distance to goal.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128506;</span>
+                            <div>
+                                <strong>GPS Navigation</strong>
+                                <p>Find shortest route between two locations on a road network. Heuristic: straight-line distance to destination.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#127918;</span>
+                            <div>
+                                <strong>Game Pathfinding (NPCs)</strong>
+                                <p>Move characters through game maps avoiding walls and obstacles. Used in virtually every video game with AI movement.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129518;</span>
+                            <div>
+                                <strong>Puzzle Solving</strong>
+                                <p>Solve the 15-puzzle, Rubik's cube, or Sokoban. A* guarantees finding the optimal (fewest moves) solution.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Optimal + complete with admissible heuristic</div>
+                        <div class="when-con"><span>-</span> Memory-intensive for large state spaces</div>
+                    </div>
+                </div>
+
+                <!-- Genetic Algorithm -->
+                <div class="when-card" data-category="classical">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">Genetic Algorithm</span>
+                            <span class="when-card__badge when-card__badge--classical">Classical AI</span>
+                        </div>
+                        <p class="when-card__when">When you need to optimize a <strong>complex function with no gradient</strong> — especially with large, discrete, or mixed search spaces.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128230;</span>
+                            <div>
+                                <strong>Scheduling & Logistics</strong>
+                                <p>Optimize delivery routes (TSP), staff schedules, or manufacturing job ordering. Evolve near-optimal schedules over generations.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#9992;</span>
+                            <div>
+                                <strong>Engineering Design</strong>
+                                <p>Optimize wing shapes, antenna designs, or circuit layouts. NASA used GAs to evolve antenna designs that outperformed human engineers.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129504;</span>
+                            <div>
+                                <strong>Neural Architecture Search</strong>
+                                <p>Evolve the structure of neural networks — how many layers, what connections, which activation functions — automatically.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> No gradient needed, explores broadly, handles any objective</div>
+                        <div class="when-con"><span>-</span> Slow convergence, no optimality guarantee</div>
+                    </div>
+                </div>
+
+                <!-- Bayesian Networks -->
+                <div class="when-card" data-category="classical">
+                    <div class="when-card__head">
+                        <div class="when-card__algo">
+                            <span class="when-card__name">Bayesian Networks</span>
+                            <span class="when-card__badge when-card__badge--classical">Classical AI</span>
+                        </div>
+                        <p class="when-card__when">When you need to reason about <strong>cause-and-effect under uncertainty</strong> and want interpretable probabilistic reasoning.</p>
+                    </div>
+                    <div class="when-card__examples">
+                        <div class="when-example">
+                            <span class="when-example__icon">&#129658;</span>
+                            <div>
+                                <strong>Clinical Decision Support</strong>
+                                <p>"Given symptoms X, Y, Z, what's the probability of disease A vs B?" Model causal relationships between symptoms, tests, and diseases.</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#9888;</span>
+                            <div>
+                                <strong>Risk Assessment</strong>
+                                <p>Model cascading failure probabilities in systems — "If component A fails, what's the probability that system C goes down?"</p>
+                            </div>
+                        </div>
+                        <div class="when-example">
+                            <span class="when-example__icon">&#128231;</span>
+                            <div>
+                                <strong>Spam Filtering (Naive Bayes)</strong>
+                                <p>Calculate P(spam | words). Simple Bayesian classifier that's fast, effective, and the basis of many email filters.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="when-card__footer">
+                        <div class="when-pro"><span>+</span> Interpretable, handles missing data, causal reasoning</div>
+                        <div class="when-con"><span>-</span> Requires domain expertise to build, computationally expensive for large networks</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Roadmap -->
+    <section class="section section--dark" id="roadmap">
+        <div class="container">
+            <div class="section__header" data-animate="fade-up">
+                <span class="section__tag">Chapter 06</span>
+                <h2 class="section__title">Learning Roadmap</h2>
+                <p class="section__desc">A structured path from beginner to advanced AI practitioner. Follow these stages to build your expertise.</p>
+            </div>
+
+            <div class="roadmap" data-animate="fade-up" data-delay="100">
+                <div class="roadmap__stage">
+                    <div class="roadmap__marker">
+                        <span class="roadmap__num">01</span>
+                    </div>
+                    <div class="roadmap__content">
+                        <div class="roadmap__level">Foundation</div>
+                        <h3>Mathematics & Programming</h3>
+                        <p>Build the mathematical foundation and coding skills needed for AI.</p>
+                        <div class="roadmap__skills">
+                            <div class="skill-pill">Linear Algebra</div>
+                            <div class="skill-pill">Calculus</div>
+                            <div class="skill-pill">Probability & Statistics</div>
+                            <div class="skill-pill">Python</div>
+                            <div class="skill-pill">NumPy & Pandas</div>
+                            <div class="skill-pill">Data Visualization</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap__stage">
+                    <div class="roadmap__marker">
+                        <span class="roadmap__num">02</span>
+                    </div>
+                    <div class="roadmap__content">
+                        <div class="roadmap__level">Core ML</div>
+                        <h3>Machine Learning Fundamentals</h3>
+                        <p>Understand the core algorithms, evaluation methods, and ML workflow.</p>
+                        <div class="roadmap__skills">
+                            <div class="skill-pill">Supervised Learning</div>
+                            <div class="skill-pill">Unsupervised Learning</div>
+                            <div class="skill-pill">Feature Engineering</div>
+                            <div class="skill-pill">Model Evaluation</div>
+                            <div class="skill-pill">Scikit-learn</div>
+                            <div class="skill-pill">Cross-Validation</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap__stage">
+                    <div class="roadmap__marker">
+                        <span class="roadmap__num">03</span>
+                    </div>
+                    <div class="roadmap__content">
+                        <div class="roadmap__level">Deep Learning</div>
+                        <h3>Neural Networks & Deep Learning</h3>
+                        <p>Dive into neural network architectures and deep learning frameworks.</p>
+                        <div class="roadmap__skills">
+                            <div class="skill-pill">Neural Network Basics</div>
+                            <div class="skill-pill">CNNs</div>
+                            <div class="skill-pill">RNNs & LSTMs</div>
+                            <div class="skill-pill">PyTorch / TensorFlow</div>
+                            <div class="skill-pill">Transfer Learning</div>
+                            <div class="skill-pill">Regularization</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="roadmap__stage">
+                    <div class="roadmap__marker">
+                        <span class="roadmap__num">04</span>
+                    </div>
+                    <div class="roadmap__content">
+                        <div class="roadmap__level">Advanced</div>
+                        <h3>Specialization & Research</h3>
+                        <p>Specialize in specific domains and explore cutting-edge research.</p>
+                        <div class="roadmap__skills">
+                            <div class="skill-pill">Transformers & Attention</div>
+                            <div class="skill-pill">Generative AI</div>
+                            <div class="skill-pill">Reinforcement Learning</div>
+                            <div class="skill-pill">MLOps</div>
+                            <div class="skill-pill">Research Papers</div>
+                            <div class="skill-pill">Ethics & Safety</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <span class="nav__logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 28 28" fill="none">
+                            <path d="M14 2L2 8v12l12 6 12-6V8L14 2z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="14" cy="14" r="4" fill="currentColor"/>
+                        </svg>
+                    </span>
+                    <span>AI Learn</span>
+                </div>
+                <p class="footer__text">An interactive guide to artificial intelligence, machine learning, and deep learning. Built for curious minds.</p>
+                <div class="footer__links">
+                    <a href="#fundamentals">Fundamentals</a>
+                    <a href="#machine-learning">Machine Learning</a>
+                    <a href="#deep-learning">Deep Learning</a>
+                    <a href="#algorithms">Algorithms</a>
+                    <a href="#use-cases">Use Cases</a>
+                    <a href="#roadmap">Roadmap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
