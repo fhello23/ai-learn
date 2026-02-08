@@ -17,6 +17,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 12px;
 }
 
 .detail-nav__back {
@@ -27,6 +28,7 @@
     font-weight: 500;
     color: var(--text-secondary);
     transition: color 0.2s var(--ease);
+    white-space: nowrap;
 }
 
 .detail-nav__back:hover {
@@ -99,12 +101,14 @@
     letter-spacing: -0.03em;
     line-height: 1.1;
     margin-bottom: 12px;
+    overflow-wrap: anywhere;
 }
 
 .detail__subtitle {
     font-size: 17px;
     color: var(--text-secondary);
     line-height: 1.7;
+    overflow-wrap: anywhere;
 }
 
 /* ===== GRID LAYOUT ===== */
@@ -123,6 +127,7 @@
 .detail__section-title {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
     font-size: 16px;
     font-weight: 700;
@@ -148,6 +153,7 @@
 
 .detail__step {
     display: flex;
+    align-items: flex-start;
     gap: 14px;
     padding: 16px;
     border-radius: 10px;
@@ -180,6 +186,8 @@
     line-height: 1.6;
     margin: 0;
     padding-top: 4px;
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 /* Example */
@@ -226,6 +234,7 @@
     cursor: pointer;
     transition: all 0.2s var(--ease);
     z-index: 2;
+    white-space: nowrap;
 }
 
 .detail__copy:hover {
@@ -354,6 +363,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
     padding: 8px 12px;
     border-radius: 8px;
     background: rgba(255, 255, 255, 0.03);
@@ -372,6 +382,8 @@
     font-size: 13px;
     font-weight: 500;
     color: var(--accent-light);
+    text-align: right;
+    overflow-wrap: anywhere;
 }
 
 /* ===== 404 STATE ===== */
@@ -400,6 +412,11 @@
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
+    .detail-nav__container,
+    .detail__container {
+        padding: 0 20px;
+    }
+
     .detail__grid {
         grid-template-columns: 1fr;
     }
@@ -407,9 +424,98 @@
     .detail__sidebar {
         position: static;
     }
+
+    .detail__header {
+        margin-bottom: 36px;
+    }
+}
+
+@media (max-width: 760px) {
+    .detail-nav__container {
+        flex-wrap: wrap;
+        row-gap: 10px;
+    }
+
+    .detail-nav .nav__logo {
+        font-size: 16px;
+    }
+
+    .detail-nav__back {
+        font-size: 13px;
+    }
+
+    .detail {
+        padding: 36px 0 64px;
+    }
+
+    .detail__container {
+        padding: 0 16px;
+    }
+
+    .detail__title {
+        font-size: clamp(26px, 9vw, 34px);
+    }
+
+    .detail__subtitle {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    .detail__section {
+        margin-bottom: 28px;
+    }
+
+    .detail__section-title {
+        font-size: 14px;
+        gap: 8px;
+        margin-bottom: 14px;
+    }
+
+    .detail__example {
+        padding: 18px;
+    }
+
+    .detail__card {
+        padding: 16px;
+    }
+
+    .detail__copy {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+    }
+
+    .detail__code {
+        padding: 14px;
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .detail__complexity-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .detail__complexity-value {
+        text-align: left;
+    }
 }
 
 @media (max-width: 600px) {
+    .detail-nav__container,
+    .detail__container {
+        padding: 0 14px;
+    }
+
+    .detail-nav .nav__logo span:last-child {
+        display: none;
+    }
+
+    .detail-nav__back {
+        gap: 6px;
+        font-size: 12px;
+    }
+
     .detail {
         padding: 32px 0 60px;
     }
@@ -418,12 +524,52 @@
         font-size: 28px;
     }
 
+    .detail__badge {
+        font-size: 10px;
+        padding: 4px 10px;
+    }
+
     .detail__step {
         padding: 12px;
+        gap: 10px;
+    }
+
+    .detail__step-num {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+    }
+
+    .detail__step p {
+        font-size: 14px;
     }
 
     .detail__code {
+        font-size: 11px;
+        padding: 12px;
+    }
+
+    .detail__copy {
+        font-size: 11px;
+        padding: 4px 8px;
+    }
+
+    .detail__copy span {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .detail__section-title {
+        font-size: 13px;
+        letter-spacing: 0.3px;
+    }
+
+    .detail__subtitle {
+        font-size: 14px;
+    }
+
+    .detail__list li {
         font-size: 12px;
-        padding: 16px;
     }
 }
